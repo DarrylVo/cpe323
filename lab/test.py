@@ -1,25 +1,26 @@
 import base64
-
+import binascii
+from operator import xor
 def asciitohex(ascii):
-   return base64.b16encode(ascii)  
-
+    return binascii.b2a_hex(ascii)
 def hextoascii(hex):
-   return base64.b16decode(hex)
+    return binascii.a2b_hex(hex)
 
-def base64tohex(base):
-   a= base64.b64decode(base)
-   return base64.b16encode(a)
-   
+def hextobase(hex):
+    return binascii.b2a_base64(hex)
+def basetohex(base):
+    return binascii.a2b_base64(base)
+def strxor(str1,key): #assumes hex encoded
+    a=int(str1, 16)
+    b=int(key,16)
+    if a.len()> b.len():
+        
 
-def hextobase64(hex):
-   a = base64.b16decode(hex)
-   return base64.standard_b64encode(a)
-#chr() ord()
-print 'start: Man'
-a = asciitohex('Man')
-print 'ascii to hex: '+a 
-b = hextoascii(a)
-print 'hex to ascii: '+b
-c = hextobase64(a)
-print 'hextobase64:'+c +":" 
-print 'base64tohex:'+base64tohex(c)
+    
+    
+f = open('test.txt','r')
+for line in f:
+    print (line)
+    print (strxor(line,line))
+
+
