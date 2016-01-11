@@ -1,6 +1,1 @@
-i = 1
-while i < 5: 
-    print ('fag')
-    i+=1
-print 'done'
-    
+x = {10:'hello'}
